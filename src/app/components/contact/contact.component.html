@@ -1,0 +1,63 @@
+<section class="page-section" id="contact">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-heading text-uppercase">Contact Us</h2>
+      <h3 class="section-subheading text-white">We'd love to hear from you.</h3>
+    </div>
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+      <div class="row">
+        <div class="col-md-6">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-control mb-3"
+            placeholder="Your Name *"
+            required
+            [(ngModel)]="formData.name"
+            #name="ngModel"
+          />
+        </div>
+        <div class="col-md-6">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control mb-3"
+            placeholder="Your Email *"
+            required
+            email
+            [(ngModel)]="formData.email"
+            #email="ngModel"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <textarea
+            id="message"
+            name="message"
+            class="form-control mb-3"
+            rows="5"
+            placeholder="Your Message *"
+            required
+            [(ngModel)]="formData.message"
+            #message="ngModel"
+          ></textarea>
+        </div>
+      </div>
+      <div class="text-center">
+        <!-- Conditionally show button or thank-you message -->
+        <button
+          class="btn btn-xl text-uppercase dynamic-button"
+          type="submit"
+          [disabled]="contactForm.invalid"
+          *ngIf="!isSubmitted"
+        >
+          Send Message
+        </button>
+        <p class="text-white" *ngIf="isSubmitted">Thank you for your message! We'll get back to you shortly.</p>
+      </div>
+    </form>
+  </div>
+</section>

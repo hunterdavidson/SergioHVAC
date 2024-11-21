@@ -1,0 +1,22 @@
+/* Default Button Style */
+.dynamic-button {
+    background: #6C91C2; /* Silver-blue */
+    border-color: #6C91C2;
+    color: #FFFFFF;
+    transition: background 0s, border-color 0s;
+  }
+
+  /* Hover Effect */
+  .dynamic-button:hover {
+    background: #5273A8; /* Darker blue for hover */
+    border-color: #5273A8;
+    color: #FFFFFF;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+
+  /* Disabled Button Style */
+  .dynamic-button:disabled {
+    background: #cccccc; /* Light gray for disabled state */
+    border-color: #cccccc;
+    transition: background 0s, border-color 0s;
+  }
